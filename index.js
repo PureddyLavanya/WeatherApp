@@ -33,5 +33,5 @@ app.post("/",function(req,res)
 
 
 app.listen(3000,function(req,res){
-    console.log("Your server is running at https://127.0.0.1:3000");
+    console.log("Your server is running at port:3000");
 });
