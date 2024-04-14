@@ -21,12 +21,12 @@ app.post("/",function(req,res)
             var weatherData=JSON.parse(data);
             var tm=weatherData.main.temp;
             var desc=weatherData.weather[0].description;
-            var icon=weatherData.weather[0].icon;
-            var url2="https://openweathermap.org/img/wn/"+icon+"@2x.png";
-            res.write("<p>The weather is currently"+desc+"</p>");
-            res.write("<h2>The temperature in"+city+"is"+tm+"</h2>");
-            res.write("<img src="+url2+">");
-            res.send();
+            var weadata={
+                cityname: city,
+                temp: tm,
+                description: desc
+            };
+            res.render("result.ejs",{wdata:weadata});
         });
     });
 });
